@@ -1,0 +1,43 @@
+#!/usr/bin/perl -w
+
+use BOSS::Config;
+use PackageManager::Util;
+
+use Data::Dumper;
+
+$specification = q(
+	-c		Use the clipboard
+	-f		Force install
+	<modules>...	Modules to be install
+);
+
+my $config =
+  BOSS::Config->new
+  (
+   Spec => $specification,
+   Clipboard => 1,
+  );
+my $conf = $config->CLIConfig;
+# $UNIVERSAL::systemdir = "/var/lib/myfrdcsa/codebases/minor/system";
+
+my @possibilities;
+if (exists $conf->{-c}) {
+  push @possibilities, $config->Clipboard;
+}
+if (exists $conf->{'<modules>'}) {
+  push @possibilities, @{$conf->{'<modules>'}};
+}
+
+my @toinstall;
+foreach my $possibility (@possibilities) {
+  # assume it is correct for now, but eventually use
+  # Suppositional-Decomposer here to prove that it could be, and
+  # eventually, that it is..
+  push @toinstall, $possibility;
+}
+
+InstallCPANModules
+  (
+   Modules => \@toinstall,
+   Force => $conf->{'-f'},
+  );

@@ -1,0 +1,10 @@
+#!/usr/bin/perl -w
+
+use PackageManager::Util;
+
+use Data::Dumper;
+
+InstallScriptDependencies
+  (
+   Scripts => \@ARGV,
+  );

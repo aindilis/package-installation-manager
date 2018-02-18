@@ -1,0 +1,31 @@
+$VAR1 = {
+          '/usr/share/man/man3/iconv_open.3.gz' => {
+                                                     'PackageFiles' => 1,
+                                                     'Locate' => 1,
+                                                     'DLocate' => 1
+                                                   },
+          '/usr/include/iconv.h' => {
+                                      'PackageFiles' => 1,
+                                      'Locate' => 1,
+                                      'DLocate' => 1
+                                    },
+          '/usr/share/man/man3/iconv.3.gz' => {
+                                                'PackageFiles' => 1,
+                                                'Locate' => 1,
+                                                'DLocate' => 1
+                                              },
+          '/usr/bin/iconv' => {
+                                'PackageFiles' => 1,
+                                'DLocate' => 1
+                              },
+          '/usr/share/man/man3/iconv_close.3.gz' => {
+                                                      'PackageFiles' => 1,
+                                                      'Locate' => 1,
+                                                      'DLocate' => 1
+                                                    },
+          '/usr/share/man/man1/iconv.1.gz' => {
+                                                'PackageFiles' => 1,
+                                                'Locate' => 1,
+                                                'DLocate' => 1
+                                              }
+        };
